@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root{
+    --bg-color: #f1deda;
+    --text-color: #3f251f;
+    --p-color: #db8c71;
+    --s-color: #f2bdab;
+    --accent-color: #ab90c1;
+    --form-bg: hsl(15, 73%, 81%, 0.4);
+    --red: #D2042D;
+}
+.darkmode{
+        --bg-color: #320a0f;
+        --text-color: #cc9594;
+        --p-color: #4d2121;
+        --s-color: #311b1b;
+        --accent-color: #8c687d;
+        --form-bg: hsla(11, 25%, 37%, 0.4);
+        --red: #a7002a;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    color: var(--text-color);
+}
+body{
+    height: 100vh;
+}
+svg {
+    fill: var(--text-color);
+}
+svg.icon{
+    fill: var(--accent-color);
+    width: 50px;
+    height: auto;
+    padding: 2px;
+    border: 4px solid var(--accent-color);
+    border-radius: 50%;
+}
+header{
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1dvw;
+    height: 9dvh;
+}
+nav{
+    padding-right: 2dvw;
+}
+li{
+    color: var(--text-color);
+}
+li button{
+    margin-left: 50px;
+    background-color: var(--s-color);
+    width: 3dvw;
+    height: 2dvw;
+    border: none;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+li button:hover{
+    cursor: pointer;
+    background-color: var(--bg-color);
+}
+li button:hover svg{
+    width: 30px;
+    height: 30px;
+}
+button svg{
+    margin: 0 auto;
+    fill: var(--accent-color);
+}
+nav button svg:first-child{
+    display: none;
+}
+.darkmode nav button svg:first-child{
+    display: block;
+}
+.darkmode nav button svg:last-child{
+    display: none;
+}
+ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+li{
+    list-style-type: none;
+}
+main{
+    background: conic-gradient(var(--s-color), var(--p-color), var(--s-color), var(--p-color), var(--s-color));
+    height: 88dvh;
+    justify-items: center;
+    align-content: center;
+}
+img{
+    width: 10dvw;
+}
+.section2{
+    padding: 2dvw;
+    background-color: var(--form-bg);
+    width: max(40dvw, 300px);
+    height: fit-content;
+    border: 1px solid var(--s-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 2px var(--p-color);
+    backdrop-filter: blur(5px);
+}
+h1{
+    color: var(--text-color);
+    padding: 1em;
+    font-size: 300%;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+form{
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+form > div{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+form label{
+    display: flex;
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--p-color);
+    fill: var(--text-color);
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 20px 0px 0px 20px;
+}
+input:focus{
+    outline: none;
+    border: 3px solid var(--text-color);
+    border-left: none;
+}
+div:has(input:focus) label{
+    background-color: var(--text-color);
+}
+div:has(input:focus) label > svg{
+    fill: var(--accent-color);
+}
+input:hover{
+    border: 3px solid var(--text-color);
+    border-left: none;
+}
+div:has(input:hover) label{
+    background-color: var(--text-color);
+}
+div:has(input:hover) label > svg{
+    fill: var(--accent-color);
+}
+
+form div.error label{
+    background-color: var(--red);
+}
+form div.error label > svg{
+    fill: var(--text-color);
+}
+form div.error input{
+    outline: none;
+    border: 3px solid var(--red);
+    border-left: none;
+}
+form input{
+    height: 50px;
+    width: 60%;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    padding: 5px;
+    font-size: min(1.1rem, 1.5vw);
+    font-family: inherit;
+}
+form button{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--p-color);
+    margin: 0 auto;
+    width: calc(100px + 6dvw);
+    height: calc(20px + 1.5dvw);
+    border: var(--p-color) 2px solid;
+    border-radius: 20px;
+}
+form button:hover{
+    color: var(--accent-color);
+    background-color: var(--text-color);
+    border: var(--text-color) 2px solid;
+    width: calc(100px + 7dvw);
+    height: calc(20px + 2dvw);
+}
+p{
+    color: var(--text-color);
+}
+a{
+    color: var(--accent-color);
+}
+footer{
+    height: 3dvh;
+    font-size: 13px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+#errorMessage{
+    color: var(--red);
+    font-size: large;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px var(--s-color);
+}
