@@ -54,13 +54,17 @@ nav{
     padding-right: 2dvw;
 }
 li{
+    cursor: pointer;
     color: var(--text-color);
+}
+li:hover{
+    font-size: 105%;
 }
 li button{
     margin-left: 50px;
     background-color: var(--s-color);
-    width: 3dvw;
-    height: 2dvw;
+    width: max(3dvw, 35px);
+    height: max(2dvw, 25px);
     border: none;
     border-radius: 50%;
     align-self: flex-end;
@@ -106,7 +110,7 @@ img{
 .section2{
     padding: 2dvw;
     background-color: var(--form-bg);
-    width: max(40dvw, 300px);
+    width: max(45dvw, 500px);
     height: fit-content;
     border: 1px solid var(--s-color);
     border-radius: 10px;
@@ -182,8 +186,9 @@ form input{
     border: none;
     border-radius: 0px 20px 20px 0px;
     padding: 5px;
-    font-size: min(1.1rem, 1.5vw);
+    font-size: min(1.1rem, 2vw);
     font-family: inherit;
+    font-weight: 500;
 }
 form button{
     text-transform: uppercase;
@@ -191,17 +196,18 @@ form button{
     font-weight: 600;
     color: var(--p-color);
     margin: 0 auto;
-    width: calc(100px + 6dvw);
-    height: calc(20px + 1.5dvw);
+    width: min(200px, 45dvw);
+    height: min(50px, 20vw);
     border: var(--p-color) 2px solid;
     border-radius: 20px;
 }
 form button:hover{
+    cursor: pointer;
     color: var(--accent-color);
     background-color: var(--text-color);
     border: var(--text-color) 2px solid;
-    width: calc(100px + 7dvw);
-    height: calc(20px + 2dvw);
+    width: min(200px, 45dvw);
+    height: min(50px, 20vw);
 }
 p{
     color: var(--text-color);
@@ -210,6 +216,7 @@ a{
     color: var(--accent-color);
 }
 footer{
+    padding-top: 5px;
     height: 3dvh;
     font-size: 13px;
     background-color: var(--bg-color);
@@ -220,4 +227,30 @@ footer{
     font-size: large;
     font-weight: bold;
     text-shadow: 1px 1px 3px var(--s-color);
+}
+@media (max-width: 725px){
+    ul{
+        gap: 5px;
+    }
+    nav li {
+        width: 55px;
+        height: 25px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+    } 
+    nav li button{
+        margin-left: 5px;
+    }
+    form div > input{
+        font-size: 0.9rem;
+    }
+    .section2{
+        width: 90dvw;
+    }
+}
+@media (max-width: 400px){
+    section form div > input{
+    font-size: 0.8rem;
+}
 }
